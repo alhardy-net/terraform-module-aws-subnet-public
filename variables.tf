@@ -71,24 +71,6 @@ variable "use_single_nat_gateway" {
   default     = false
 }
 
-variable "enable_flow_log" {
-  description = "Enable Subnet flow log. Logs are sent to s3 bucket."
-  type        = bool
-}
-
-variable "flow_log_s3_bucket_arn" {
-  type        = string
-  default     = ""
-  description = "S3 ARN for Subnet flow logs."
-  sensitive   = true
-}
-
-variable "flow_log_traffic_type" {
-  type        = string
-  default     = "ALL"
-  description = "Type of traffic to capture in Subnet flow logs. Valid values: ACCEPT, REJECT, ALL."
-}
-
 # Terraform Cloud
 variable "TFC_WORKSPACE_SLUG" {
   type        = string
