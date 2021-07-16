@@ -17,3 +17,7 @@ output "nat_gateway_ids" {
   value       = aws_nat_gateway.public.*.id
   description = "The Identifiers of the nat gateway(s)."
 }
+
+output "availability_zones" {
+  value = aws_subnet.public.*.availability_zone
+}

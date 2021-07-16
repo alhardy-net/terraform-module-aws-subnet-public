@@ -1,7 +1,7 @@
 locals {
-  name               = "alhardynet"
+  name               = "example"
   aws_region         = "ap-southeast-2"
-  vpc_cidr           = "10.0.0.0/16"
+  vpc_cidr           = "10.100.0.0/16"
   public_subnet_cidr = cidrsubnet(local.vpc_cidr, 4, 0)
 }
 
@@ -21,7 +21,7 @@ module "public-subnet" {
   aws_region             = local.aws_region
   igw_id                 = module.aws-vpc.igw_id
   name                   = "${local.name}-public"
-  enable_nat_gateway     = true
+  enable_nat_gateway     = false
   use_single_nat_gateway = true
   subnet_count           = 2
   vpc_id                 = module.aws-vpc.vpc_id
